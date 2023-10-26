@@ -122,7 +122,7 @@
           let adjustedMonthlyPaymentSilverPlan =
             ((employerCost - employerContribution) / monthlyIncome) * 100;
           let adjustedMonthlyPaymentLowestCostPlan =
-            (employerContribution - lowestCostPlan) / monthlyIncome;
+            ((lowestCostPlan - employerContribution) / monthlyIncome) * 100;
 
           // Display results
           let resultElement = document.getElementById("result");
@@ -131,11 +131,11 @@
           let resultText = "";
 
           resultText +=
-            "Adjusted Monthly Payment (Silver Plan): %" +
+            "Lowest Cost Silver Plan for Employee Only: %" +
             adjustedMonthlyPaymentSilverPlan.toFixed(2) +
             "<br>";
           resultText +=
-            "Adjusted Monthly Payment (Lowest Cost Plan): %" +
+            "Lowest Cost Plan for Family without Employee: %" +
             adjustedMonthlyPaymentLowestCostPlan.toFixed(2);
 
           resultElement.innerHTML = resultText;
